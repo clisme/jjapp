@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4169E1"
+    tools:context="com.example.testimage.MainActivity" >
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bgstart" />
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="310dp"
+        android:layout_marginBottom="7dp"
+        android:text="请点击这里..."
+        android:textColor="#FF00FF"
+        android:textSize="27sp" />
+
+</RelativeLayout>

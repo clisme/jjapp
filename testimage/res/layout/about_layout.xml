@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#483D8B"
+    android:orientation="vertical" >
+    
+    <ImageView 
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_launcher_hui" />
+    
+    <TextView 
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="当前版本号：2.2.22"
+        android:textSize="15sp"
+        android:textColor="#3CB371" />
+    
+    <Button 
+        android:id="@+id/bt_update"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/button"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="检查新版本"
+        android:textSize="18sp" />
+    
+    <TextView 
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="滑动两端即可回到主菜单"
+        android:textColor="#00FFFF"
+        android:textSize="18sp" />
+    
+
+</LinearLayout>
