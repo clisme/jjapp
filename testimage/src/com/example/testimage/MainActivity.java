@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
 							e.printStackTrace();
 						}
 						Intent intent = new Intent(MainActivity.this, IntentActivity.class);
-						startActivity(intent);
+						//startActivity(intent);
 						finish();
 					}
 				};
