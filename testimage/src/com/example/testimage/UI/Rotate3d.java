@@ -24,7 +24,7 @@ public class Rotate3d extends Animation {
 		mToDegrees = toDegrees;
 		mCenterX = centerX;
 		mCenterY = centerY;
-		mDepthZ = depthZ;
+		///mDepthZ = depthZ;
 		mReverse = reverse;
 	}
 
