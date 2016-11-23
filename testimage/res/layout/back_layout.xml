@@ -2,9 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#006400"
     android:orientation="vertical"
      >
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="反馈"
+        android:textColor="#FF1493"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal" />
     
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="非常乐意您提出任何意见或建议，我们将非常重视，谢谢您"
+        android:textColor="#FF69B4"
+        android:textSize="15sp"
+        android:layout_gravity="center_horizontal" />
     <EditText 
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -19,6 +34,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button"
         android:layout_gravity="center"
+        android:onClick="submit"
         android:text="提交" />
 
 </LinearLayout>

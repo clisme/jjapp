@@ -99,6 +99,7 @@ public class IntentActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				playAudio();
 				Intent intent = new Intent(IntentActivity.this, GameRex.class);
 				startActivity(intent);
 			}
@@ -108,6 +109,7 @@ public class IntentActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				playAudio();
 				Intent intent = new Intent(IntentActivity.this, BackUI.class);
 				startActivity(intent);
 			}
@@ -178,7 +180,7 @@ public class IntentActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(IntentActivity.this, "确定", 0).show();
+//				Toast.makeText(IntentActivity.this, "确定", 0).show();
 //					exitDialog.dismiss();
 				finish();
 			}
@@ -187,7 +189,7 @@ public class IntentActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(IntentActivity.this, "取消", 0).show();
+//				Toast.makeText(IntentActivity.this, "取消", 0).show();
 				exitDialog.dismiss();
 			}
 		});
