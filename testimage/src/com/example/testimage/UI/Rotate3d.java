@@ -20,7 +20,7 @@ public class Rotate3d extends Animation {
 
 	public Rotate3d(float fromDegrees, float toDegrees, float centerX,
 			float centerY, float depthZ, boolean reverse) {
-		mFromDegrees = fromDegrees;
+		//mFromDegrees = fromDegrees;
 		mToDegrees = toDegrees;
 		mCenterX = centerX;
 		mCenterY = centerY;
