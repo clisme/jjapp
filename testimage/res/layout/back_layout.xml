@@ -21,6 +21,7 @@
         android:textSize="15sp"
         android:layout_gravity="center_horizontal" />
     <EditText 
+        android:id="@+id/et_advice"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -35,6 +36,9 @@
         android:background="@drawable/button"
         android:layout_gravity="center"
         android:onClick="submit"
+        android:textColor="#D2691E"
+        android:textSize="22sp"
+        android:fontFamily="sans-serif-light"
         android:text="提交" />
 
 </LinearLayout>

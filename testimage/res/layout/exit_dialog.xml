@@ -7,6 +7,16 @@
     android:orientation="vertical" >
     
     <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:text="提示"
+        android:textSize="20sp"
+        android:textColor="#CD5C5C"
+        android:gravity="center"
+        android:background="@drawable/btn1" />
+    
+    
+    <TextView 
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="80dp"
