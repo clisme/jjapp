@@ -52,6 +52,13 @@
             android:name="com.example.testimage.BackUI">
             
         </activity>
+        
+        <activity 
+            android:name="com.example.testimage.StartGame"
+            android:screenOrientation="landscape"
+            >
+            
+        </activity>
     </application>
 
 </manifest>

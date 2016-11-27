@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_exitDialog"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="5dp"
@@ -7,6 +8,7 @@
     android:orientation="vertical" >
     
     <TextView 
+        android:id="@+id/tv_alert"
         android:layout_width="match_parent"
         android:layout_height="26dp"
         android:text="提示"

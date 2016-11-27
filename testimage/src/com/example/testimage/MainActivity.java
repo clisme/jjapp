@@ -65,17 +65,14 @@ public class MainActivity extends Activity {
 					@Override
 					public void run() {
 						try {
-							AssetFileDescriptor afd = getResources()
-									.getAssets().openFd("btn.mp3");
-							mp.setDataSource(afd.getFileDescriptor(),
-									afd.getStartOffset(), afd.getLength());
+							AssetFileDescriptor afd = getResources().getAssets().openFd("btn.mp3");
+							mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
 							mp.prepare();
 							mp.start();
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
-						Intent intent = new Intent(MainActivity.this,
-								IntentActivity.class);
+						Intent intent = new Intent(MainActivity.this, IntentActivity.class);
 						startActivity(intent);
 						// handler.sendMessage(new Message());
 						// overridePendingTransition(android.R.anim.slide_in_left,

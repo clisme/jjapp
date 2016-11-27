@@ -1,14 +1,17 @@
 package com.example.testimage;
 
 import java.io.File;
+import java.io.IOException;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.AssetFileDescriptor;
 import android.graphics.Color;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.net.Uri;
 import android.os.Bundle;
@@ -39,7 +42,9 @@ public class IntentActivity extends Activity {
 	private boolean btAboutFlag = false;
 	private boolean btExitFlag = false;
 	private SoundPool soundPool;
+	private MediaPlayer mp = new MediaPlayer();
 	private CustomDialog exitDialog;
+//	Activity activity;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,13 +58,38 @@ public class IntentActivity extends Activity {
 		soundPool = new SoundPool(10, AudioManager.STREAM_SYSTEM, 5);
 		soundPool.load(this, R.raw.button34, 1);
 		soundPool.load(this, R.raw.exitdialog, 2);
+//		soundPool.load(this, R.raw.music03, 3);
+		soundPool.load(this, R.raw.click, 1);
+		soundPool.load(this, R.raw.click_16, 2);
+		try {
+			AssetFileDescriptor afd = getResources().getAssets().openFd("music03.ogg");
+			mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+			mp.prepare();
+			mp.setLooping(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	@Override
+	protected void onStart() {
+		super.onStart();
+		mp.start();
+	}
+	@Override
+	protected void onResume() {
+		super.onResume();
+//		playIntentBgAudio();
 	}
 	
 	public void bt_click(View v) {
 		switch (v.getId()) {
 		case R.id.bt1:
-			playAudio();
-			Toast.makeText(this, "bt1 click", 1).show();
+			playStartGameAudio();
+//			Toast.makeText(this, "bt1 click", 1).show();
+			Intent intent = new Intent(IntentActivity.this, StartGame.class);
+			startActivity(intent);
+//			finish();
 			break;
 		case R.id.bt_help:
 			playAudio();
@@ -180,6 +210,7 @@ public class IntentActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				playBtnSounds();
 //				Toast.makeText(IntentActivity.this, "确定", 0).show();
 //					exitDialog.dismiss();
 				finish();
@@ -189,6 +220,7 @@ public class IntentActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				playBtnSounds();
 //				Toast.makeText(IntentActivity.this, "取消", 0).show();
 				exitDialog.dismiss();
 			}
@@ -196,16 +228,44 @@ public class IntentActivity extends Activity {
 		playExitAudio();
 		exitDialog.show();
 	}
+	
+	public void playBtnSounds() {
+		soundPool.play(2, 1, 1, 2, 0, 1);
+	}
 
 	public void playAudio() {
 		soundPool.play(1, 1, 1, 0, 0, 1);
 	}
 	
+	public void playStartGameAudio() {
+		soundPool.play(3, 1, 1, 1, 0, 1);
+	}
+	
 	public void playExitAudio() {
 		soundPool.play(2, 1, 1, 0, 1, 1);
 	}
+	
+	/*public void playIntentBgAudio() {
+		soundPool.play(3, 1, 1, 0, -1, 1);
+	}*/
 	@Override
 	public void onBackPressed() {
 		showExitDialog();
+	}
+	@Override
+	protected void onStop() {
+		super.onStop();
+		mp.pause();
+	}
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		/*if (soundPool != null) {
+			soundPool = null;
+		}*/
+		if (mp != null) {
+			mp.stop();
+			mp.release();
+		}
 	}
 }

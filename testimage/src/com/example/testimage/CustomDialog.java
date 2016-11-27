@@ -18,6 +18,8 @@ public class CustomDialog extends Dialog {
 	private TextView title;
 	private Button positionButton;
 	private Button negativeButton;
+	private View mView;
+	private TextView tv_alert;
 
 	public CustomDialog(Context context) {
 		super(context,R.style.dialog);
@@ -25,11 +27,40 @@ public class CustomDialog extends Dialog {
 	}
 
 	private void setCustomDialog() {
-		View mView = LayoutInflater.from(getContext()).inflate(R.layout.exit_dialog, null);
+		mView = LayoutInflater.from(getContext()).inflate(R.layout.exit_dialog, null);
 		title = (TextView) mView.findViewById(R.id.title);
+		tv_alert = (TextView) findViewById(R.id.tv_alert);
 		positionButton = (Button) mView.findViewById(R.id.positionButton);
 		negativeButton = (Button) mView.findViewById(R.id.negativeButton);
 		super.setContentView(mView);
+	}
+	
+	public void setAlert(String at) {
+		tv_alert.setText(at);
+	}
+	
+	public void setBackgroundLayout(int resID) {
+		mView.setBackgroundResource(resID);
+	}
+	
+	public void setPosittionButtonName(String posittionName) {
+		positionButton.setText(posittionName);
+	}
+	
+	public void setPtBtnBg(int resId) {
+		positionButton.setBackgroundResource(resId);
+	}
+	
+	public void setNvBtnBg(int resId) {
+		negativeButton.setBackgroundResource(resId);
+	}
+	
+	public void setNegativeButtonName(String negativeName) {
+		negativeButton.setText(negativeName);
+	}
+	
+	public void setTitle(String tt) {
+		title.setText(tt);
 	}
 	/**
 	 * È·¶¨¼ü¼àÌýÆ÷
