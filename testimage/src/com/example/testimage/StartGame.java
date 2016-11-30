@@ -1,5 +1,7 @@
 package com.example.testimage;
 
+import java.io.IOException;
+
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.content.res.AssetFileDescriptor;
@@ -17,6 +19,7 @@ public class StartGame extends Activity {
 
 	// private SoundPool soundPool;
 	private MediaPlayer player = new MediaPlayer();
+	private MediaPlayer player1 = new MediaPlayer();
 	private int soundCount;
 	private CustomDialog exitGameDialog;
 	private SoundPool pool;
@@ -39,13 +42,30 @@ public class StartGame extends Activity {
 			player.prepare();
 			// player.setLooping(true);
 			player.start();
-			/*
-			 * player.setOnCompletionListener(new OnCompletionListener() {
-			 * 
-			 * @Override public void onCompletion(MediaPlayer mp) { try {
-			 * while(soundCount != 2) { player.start(); soundCount++; } } catch
-			 * (Exception e) { e.printStackTrace(); } } });
-			 */
+			
+			 /*player.setOnCompletionListener(new OnCompletionListener() {
+			  
+			 @Override 
+			 public void onCompletion(MediaPlayer mp) { try {
+			 while(soundCount != 2) { player.start(); soundCount++; } } catch
+			 * (Exception e) { e.printStackTrace(); } } });*/
+			
+			player.setOnCompletionListener(new OnCompletionListener() {
+				
+				@Override
+				public void onCompletion(MediaPlayer mp) {
+					try {
+						AssetFileDescriptor assertSounds = getResources().getAssets().openFd("game_backmusic.mp3");
+						player1.setDataSource(assertSounds.getFileDescriptor(), assertSounds.getStartOffset(), assertSounds.getLength());
+						player1.prepare();
+						player1.setLooping(true);
+						player1.start();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
+			 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -74,6 +94,7 @@ public class StartGame extends Activity {
 	@Override
 	protected void onStop() {
 		super.onStop();
+		player1.pause();
 	}
 
 	@Override
