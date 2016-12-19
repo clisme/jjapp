@@ -17,6 +17,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.Html;
+import android.text.Layout;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -52,7 +53,7 @@ public class IntentActivity extends Activity {
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		setContentView(R.layout.intent_layout);
 		bt1 = (Button) findViewById(R.id.bt1);
-		bt_help = (Button) findViewById(R.id.bt_help);
+		bt_help = (Button) findViewById(R.id.bt_hhhhhhhh);
 		bt_about = (Button) findViewById(R.id.bt_about);
 		bt_exit = (Button) findViewById(R.id.bt_exit);
 		soundPool = new SoundPool(10, AudioManager.STREAM_SYSTEM, 5);
@@ -91,7 +92,7 @@ public class IntentActivity extends Activity {
 			startActivity(intent);
 //			finish();
 			break;
-		case R.id.bt_help:
+		case R.id.bt_hhhhhhhh:
 			playAudio();
 //			Toast.makeText(this, "bt_help click", 1).show();
 			showHelpDialog();
@@ -117,7 +118,7 @@ public class IntentActivity extends Activity {
 //		startActivity(intent);
 //	}
 
-	private void showHelpDialog() {
+	public void showHelpDialog() {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		dialog.show();
 		Window window = dialog.getWindow();
@@ -125,16 +126,26 @@ public class IntentActivity extends Activity {
 		window.setLayout(1920, 900);
 		window.setWindowAnimations(R.style.AnimBottom);
 		Button bt_load = (Button) window.findViewById(R.id.bt_load);
+		Button bt_introduce = (Button) window.findViewById(R.id.bt_introduce);
+		Button bt_back = (Button) window.findViewById(R.id.bt_back);
+		bt_introduce.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				playAudio();
+				showIntroduceDialog();
+			}
+		});
 		bt_load.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				playAudio();
-				Intent intent = new Intent(IntentActivity.this, GameRex.class);
-				startActivity(intent);
+//				Intent intent = new Intent(IntentActivity.this, GameRex.class);
+//				startActivity(intent);
+				showRexDialog();
 			}
 		});
-		Button bt_back = (Button) window.findViewById(R.id.bt_back);
 		bt_back.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -182,6 +193,22 @@ public class IntentActivity extends Activity {
 //		});
 	}
 
+	protected void showRexDialog() {
+		AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+		alertDialog.show();
+		Window window = alertDialog.getWindow();
+		window.setContentView(R.layout.rex_layout);
+		window.setLayout(890, 800);
+		window.setWindowAnimations(R.style.AnimBottom);
+	}
+	protected void showIntroduceDialog() {
+		AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+		alertDialog.show();
+		Window window = alertDialog.getWindow();
+		window.setContentView(R.layout.introduce_layout);
+		window.setLayout(890, 800);
+		window.setWindowAnimations(R.style.AnimBottom);
+	}
 	private void showAboutDialog() {
 		AlertDialog dialog = new AlertDialog.Builder(this).create();
 		dialog.show();

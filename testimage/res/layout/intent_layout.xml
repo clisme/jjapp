@@ -2,14 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4B0082"
     android:id="@+id/intent_menu"
     >
     <LinearLayout 
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        android:orientation="horizontal" >
-		<ImageView 
+		<!-- <ImageView 
 		    android:layout_width="0dp"
 		    android:layout_weight="1"
 		    android:layout_height="wrap_content"
@@ -28,29 +27,33 @@
 		    android:layout_width="0dp"
 		    android:layout_weight="1"
 		    android:layout_height="match_parent"
-		    android:src="@drawable/start_bg_image"/>
+		    android:src="@drawable/start_bg_image"/> -->
+		    <ImageView 
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:src="@drawable/start_bg_image_u" />
 	</LinearLayout>
 	
 	<Button 
 	    android:id="@+id/bt1"
-	    android:background="@drawable/button"
+	    android:background="@drawable/button_u"
 	    android:layout_width="200dp"
 	    android:layout_height="wrap_content"
 	    android:text="START GAME"
-	    android:textColor="#191970"
+	    android:textColor="#FFFFF0"
 	    android:textSize="25sp"
 	    android:gravity="center"
 	    android:onClick="bt_click"
 		android:layout_centerHorizontal="true"
-		android:layout_marginTop="80dp"
+		android:layout_marginTop="60dp"
 		/>
 	<Button 
-	    android:id="@+id/bt_help"
-	    android:background="@drawable/button"
+	    android:id="@+id/bt_hhhhhhhh"
+	    android:background="@drawable/button_u"
 	    android:layout_width="200dp"
 	    android:layout_height="wrap_content"
 	    android:text="HELP"
-	    android:textColor="#191970"
+	    android:textColor="#FFFFF0"
 	    android:textSize="25sp"
 	    android:gravity="center"
 	    android:onClick="bt_click"
@@ -59,26 +62,26 @@
 		/>
 	<Button 
 	    android:id="@+id/bt_about"
-	    android:background="@drawable/button"
+	    android:background="@drawable/button_u"
 	    android:layout_width="200dp"
 	    android:layout_height="wrap_content"
 	    android:text="ABOUT"
 	    android:onClick="bt_click"
-	    android:textColor="#191970"
+	    android:textColor="#FFFFF0"
 	    android:textSize="25sp"
 	    android:gravity="center"
-	    android:layout_below="@id/bt_help"
+	    android:layout_below="@id/bt_hhhhhhhh"
 		android:layout_centerHorizontal="true"
 	     />
 	
 	<Button 
 	    android:id="@+id/bt_exit"
-	    android:background="@drawable/button"
+	    android:background="@drawable/button_u"
 	    android:layout_width="200dp"
 	    android:layout_height="wrap_content"
 	    android:text="EXIT"
 	    android:onClick="bt_click"
-	    android:textColor="#191970"
+	    android:textColor="#FFFFF0"
 	    android:textSize="25sp"
 	    android:layout_below="@id/bt_about"
 	    android:gravity="center"

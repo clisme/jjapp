@@ -29,7 +29,7 @@ public class CustomDialog extends Dialog {
 	private void setCustomDialog() {
 		mView = LayoutInflater.from(getContext()).inflate(R.layout.exit_dialog, null);
 		title = (TextView) mView.findViewById(R.id.title);
-		tv_alert = (TextView) findViewById(R.id.tv_alert);
+//		tv_alert = (TextView) findViewById(R.id.tv_alert);
 		positionButton = (Button) mView.findViewById(R.id.positionButton);
 		negativeButton = (Button) mView.findViewById(R.id.negativeButton);
 		super.setContentView(mView);

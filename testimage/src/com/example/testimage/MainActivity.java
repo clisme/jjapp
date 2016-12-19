@@ -7,7 +7,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.AssetFileDescriptor;
+import android.graphics.drawable.AnimationDrawable;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +23,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.testimage.R.layout;
 import com.example.testimage.UI.Rotate3d;
@@ -39,6 +43,7 @@ public class MainActivity extends Activity {
 	MediaPlayer mp = new MediaPlayer();
 	private RelativeLayout logo_game;
 	private RelativeLayout intent_menu;
+	private SoundPool soundPool;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,27 +58,24 @@ public class MainActivity extends Activity {
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		setContentView(R.layout.activity_main);
 		ImageView iv = (ImageView) findViewById(R.id.iv);
+		soundPool = new SoundPool(10, AudioManager.STREAM_SYSTEM, 5);
+		soundPool.load(this, R.raw.button34, 1);
+//		AnimationDrawable animationDrawable = (AnimationDrawable) iv.getDrawable();
+//		animationDrawable.start();
 		logo_game = (RelativeLayout) findViewById(R.id.logo_game);
 		intent_menu = (RelativeLayout) findViewById(R.id.intent_menu);
-		iv.setOnClickListener(new View.OnClickListener() {
+		TextView tv_gogogo = (TextView) findViewById(R.id.tv_gogogo);
+		tv_gogogo.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Timer timer = new Timer();
+				soundPool.play(1, 1, 1, 0, 0, 1);
+				/*Timer timer = new Timer();
 				TimerTask tk = new TimerTask() {
 
 					@Override
 					public void run() {
-						try {
-							AssetFileDescriptor afd = getResources().getAssets().openFd("btn.mp3");
-							mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
-							mp.prepare();
-							mp.start();
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-						Intent intent = new Intent(MainActivity.this, IntentActivity.class);
-						startActivity(intent);
+						
 						// handler.sendMessage(new Message());
 						// overridePendingTransition(android.R.anim.slide_in_left,
 						// android.R.anim.slide_out_right);
@@ -108,7 +110,19 @@ public class MainActivity extends Activity {
 						finish();
 					}
 				};
-				timer.schedule(tk, 500);
+				timer.schedule(tk, 20);
+			}*/
+				/*try {
+					AssetFileDescriptor afd = getResources().getAssets().openFd("btn.mp3");
+					mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+					mp.prepare();
+					mp.start();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}*/
+				Intent intent = new Intent(MainActivity.this, GameSesssion.class);
+				startActivity(intent);
+				finish();
 			}
 		});
 	}

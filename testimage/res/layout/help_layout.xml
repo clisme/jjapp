@@ -2,10 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFDAB9"
+    android:background="@drawable/bj"
     android:orientation="vertical" >
 
-   <!--  <LinearLayout
+  
+    <Button 
+        android:id="@+id/bt_introduce"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="游戏简介"
+        android:background="@drawable/bt_help"
+        android:textColor="#FFFFF0"
+        android:textSize="20sp" />
+    
+     <Button
+        android:id="@+id/bt_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bt_help"
+        android:text="游戏规则"
+        android:textColor="#FFFFF0"
+        android:textSize="20sp" />
+
+    <Button
+        android:layout_marginTop="5dp"
+        android:id="@+id/bt_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bt_help"
+        android:onClick="back"
+        android:text="游戏反馈"
+        android:textColor="#FFFFF0"
+        android:textSize="20sp" />
+    
+     <!--  <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
@@ -25,90 +60,46 @@
             android:textSize="20sp" />
     </LinearLayout> -->
     
-    <TextView
+    <!-- <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_gravity="center_horizontal"
             android:text="游戏简介"
             android:textColor="#FF00FF"
-            android:textSize="20sp" />
+            android:textSize="20sp" /> -->
 
-    <TextView
+    <!-- <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:text="「大老二」是仿间非常盛行的一种扑克牌游戏，这个游戏规定最大的数字是 2，所以就顺口叫大老二！"
         android:textColor="#4B0082"
-        android:textSize="18sp" />
+        android:textSize="18sp" /> -->
 
-    <TextView
+    <!-- <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
         android:text="游戏规则"
         android:textColor="#FF00FF"
-        android:textSize="20sp" />
+        android:textSize="20sp" /> -->
+        
 
     
         <!--  <WebView 
         android:id="@+id/wb"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         -->
-   
+        android:layout_height="wrap_content" -->
 
-    <Button
-        android:id="@+id/bt_load"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/button"
-        android:text="点击跳转至规则"
-        android:textColor="#2F4F4F"
-        android:textSize="17sp" />
-
-    <!--
-             <TextView 
-            android:id="@+id/tv_href"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-    -->
-
-    <TextView
+   <!--  <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
         android:text="游戏反馈"
         android:textColor="#FF00FF"
-        android:textSize="20sp" />
-
-    <!--
-         <EditText 
-        android:layout_marginTop="8dp"
-        android:gravity="top|left"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:maxLines="5"
-        android:inputType="textPassword"
-        android:hint="请输入您宝贵的意见或建议" />
-    -->
-
-    <Button
-        android:id="@+id/bt_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/button"
-        android:onClick="back"
-        android:text="我要反馈"
-        android:textColor="#2F4F4F"
-        android:textSize="17sp" />
-
+        android:textSize="20sp" /> -->
 </LinearLayout>

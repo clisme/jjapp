@@ -9,8 +9,9 @@
         android:id="@+id/iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo_bg" />
+        android:src="@drawable/logo_bg2" />
     <TextView 
+        android:id="@+id/tv_gogogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

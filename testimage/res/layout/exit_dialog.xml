@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="5dp"
-    android:background="@drawable/exit_bgimage"
+    android:background="@drawable/exi_dialog3"
     android:orientation="vertical" >
     
-    <TextView 
+    <!-- <TextView 
         android:id="@+id/tv_alert"
         android:layout_width="match_parent"
         android:layout_height="26dp"
@@ -15,7 +15,7 @@
         android:textSize="20sp"
         android:textColor="#CD5C5C"
         android:gravity="center"
-        android:background="@drawable/btn1" />
+        android:background="@drawable/btn1" /> -->
     
     
     <TextView 
@@ -24,38 +24,43 @@
         android:layout_height="80dp"
         android:gravity="center"
         android:text="您确定要退出游戏？"
-        android:textColor="#6A5ACD"
+        android:textColor="#FF6347"
         android:textSize="20sp"
          />
     
     <LinearLayout 
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_gravity="bottom"
         android:layout_marginTop="5dp"
         android:gravity="center"
         android:orientation="horizontal"
+        android:weightSum="3"
          >
-        
-        <Button 
+
+        <Button
             android:id="@+id/positionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            android:background="@drawable/button_p_n"
             android:gravity="center"
+            android:textColor="#C0C0C0"
             android:text="确定"
-            android:textColor="#191970"
-            android:textSize="20sp"
-            android:background="@drawable/button" />
-        <Button 
+            android:textSize="18sp" />
+
+        <Button
             android:id="@+id/negativeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
             android:layout_marginLeft="20dp"
-            android:text="取消"
-            android:textColor="#191970"
-            android:textSize="20sp"
+            android:background="@drawable/button_n_p"
             android:gravity="center"
-            android:background="@drawable/button" />
+            android:text="取消"
+            android:textColor="#C0C0C0"
+            android:textSize="18sp" />
+
     </LinearLayout>
 
 </LinearLayout>
