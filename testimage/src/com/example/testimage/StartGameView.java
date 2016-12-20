@@ -95,29 +95,32 @@ public class StartGameView extends SurfaceView implements
 		@Override
 		public void run() {
 			while (start) {
-				//drawUI();
-				//SystemClock.sleep(1);
+				drawUI();
+				SystemClock.sleep(1);
 			}
 		}
 	}
 
-	public void drawBitmap() {
-		Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
-				R.drawable.cardbg2);
-//		Card card = new Card(bitmap.getWidth(), bitmap.getHeight(), bitmap);
-//		card.setLocation(70, -40);
-//		Rect dst = card.getRotate();
-//		Rect src = card.getSRC();
-		canvas.drawBitmap(bitmap, -40, 100, paintRect);
-	}
+//	public void drawBitmap() {
+//		Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
+//				R.drawable.cardbg2);
+////		Card card = new Card(bitmap.getWidth(), bitmap.getHeight(), bitmap);
+////		card.setLocation(70, -40);
+////		Rect dst = card.getRotate();
+////		Rect src = card.getSRC();
+//		canvas.drawBitmap(bitmap, -40, 100, paintRect);
+//	}
 
 	public void drawUI() {
 		try {
 			canvas = holder.lockCanvas();
 			drawBackGroundImage();
 			drawWindow();
-			drawBitmap();
-//			handCards();
+//			drawBitmap();
+			for(int i = 0; i < 3; i++) {
+				drawPlayer(i);
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -198,13 +201,13 @@ public class StartGameView extends SurfaceView implements
 	public void surfaceCreated(SurfaceHolder holder) {
 		InitBitMap();
 		washCards();
-		//sgt = new StartGameThread();
+		sgt = new StartGameThread();
 		drawThread = new Thread();
 		start = true;
 		screen_width = getWidth();
 		screen_height = getHeight();
-		//sgt.start();
-		drawThread.start();
+		sgt.start();
+//		drawThread.start();
 		// soundPool = new SoundPool(100,AudioManager.STREAM_MUSIC,5);
 		// soundPool.load(getContext(), R.raw.cleancard, 10);
 		
@@ -238,7 +241,7 @@ public class StartGameView extends SurfaceView implements
 				cards[count++].setName(name);
 			}
 		}
-		cardBgBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.cardbg2);
+		//cardBgBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.cardbg2);
 		// 获取大王的图片
 		cardBitmaps[53] = BitmapFactory.decodeResource(getResources(), R.drawable.a5_17);
 		// 大王封装牌

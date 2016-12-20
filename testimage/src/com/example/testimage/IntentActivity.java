@@ -3,6 +3,8 @@ package com.example.testimage;
 import java.io.File;
 import java.io.IOException;
 
+import com.example.testimage.services.MyActivity;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -88,8 +90,12 @@ public class IntentActivity extends Activity {
 		case R.id.bt1:
 			playStartGameAudio();
 //			Toast.makeText(this, "bt1 click", 1).show();
-			Intent intent = new Intent(IntentActivity.this, StartGame.class);
+			
+			/*Intent intent = new Intent(IntentActivity.this, StartGame.class);
+			startActivity(intent);*/
+			Intent intent = new Intent(IntentActivity.this, MyActivity.class);
 			startActivity(intent);
+			
 //			finish();
 			break;
 		case R.id.bt_hhhhhhhh:
