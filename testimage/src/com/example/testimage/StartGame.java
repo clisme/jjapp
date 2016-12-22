@@ -117,7 +117,7 @@ public class StartGame extends Activity {
 		exitGameDialog = new CustomDialog(this);
 //		exitGameDialog.setAlert("温馨提示");
 		exitGameDialog.setTitle("游戏正在进行中，要退出？");
-		exitGameDialog.setBackgroundLayout(R.drawable.exitgame);
+		//exitGameDialog.setBackgroundLayout(R.drawable.exitgame);
 		exitGameDialog.setPtBtnBg(R.drawable.exit_button);
 		exitGameDialog.setNvBtnBg(R.drawable.exit_button);
 		exitGameDialog.setOnPositiveListener(new OnClickListener() {
