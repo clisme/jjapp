@@ -274,8 +274,8 @@ public class MyView extends SurfaceView implements SurfaceHolder.Callback,
 	 * »­±³¾°
 	 */
 	public void drawBackground() {
-		Rect src = new Rect(0, 0, bgBitmap.getWidth(),
-				bgBitmap.getHeight());
+		Rect src = new Rect(0, 0, bgBitmap.getWidth() * 3 / 4,
+				bgBitmap.getHeight() * 2 / 3);
 		Rect dst = new Rect(0, 0, screen_width, screen_height);
 		canvas.drawBitmap(bgBitmap, src, dst, null);
 	}
