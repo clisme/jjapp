@@ -213,7 +213,7 @@ public class MyView extends SurfaceView implements SurfaceHolder.Callback,
 			buttonText[i] = new String();
 		}
 		// 设置按钮的文本
-		buttonText[0] = "抢地主";
+		buttonText[0] = "抢";
 		buttonText[1] = "不抢";
 		/**
 		 * 初始化提示文本消息 初始化已出牌的集合
